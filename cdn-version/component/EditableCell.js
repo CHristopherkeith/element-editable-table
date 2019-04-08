@@ -23,7 +23,7 @@ Vue.component('EditableCell', {
 	</div>',
 	props: {
 		value: {
-			type: String,
+			type: [String, Number],
 			default: ""
 		},
 		toolTipContent: {
@@ -115,7 +115,7 @@ Vue.component('EditableCell', {
 			if(this.editableComponent !== 'el-select'&&this.preValue === this.value){
 				return;
 			}
-			this.$emit('input-exit');
+			this.$emit('input-exit', this.preValue);
 		}
 	},
 	mounted: function(){
