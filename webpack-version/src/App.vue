@@ -118,7 +118,15 @@ export default {
   },
   methods: {
     setEditMode (row, index) {
-      row.editMode = true;
+      // row.editMode = true;
+      row.editMode = !row.editMode;
+      if(!row.editMode){
+        this.rawGridData = this.rawGridData.map((item) => {
+          return {
+            ...item
+          }
+        });
+      }
     },
     saveRow (row, index) {
       console.log(row, index, '[saveRow]')
