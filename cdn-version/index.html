@@ -32,7 +32,7 @@
 				:show-input="!!row.editMode"
 				slot-scope="{row, $index}"
 				v-model="row.name">
-					<span slot="content">{{row.name}}</span>
+					<span slot="content" style="display: inline-block;">{{row.name}}</span>
 				</editable-cell>
 			</el-table-column>
 
